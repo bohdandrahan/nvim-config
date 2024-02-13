@@ -1,6 +1,26 @@
+
 set ignorecase
 
 "STATUS BAR SETTINGS
+" default the statusline to green when entering Vim
+function! SetNormalColor()
+  hi statusline ctermbg=yellow ctermfg=DarkMagenta
+endfunction
+
+function! InsertStatuslineColor(mode)
+  if a:mode == 'i'
+    hi statusline ctermbg=DarkMagenta ctermfg=Yellow
+  elseif a:mode == 'r'
+    hi statusline ctermbg=Red ctermfg=DarkMagenta
+  else
+    hi statusline ctermbg=Red ctermfg=DarkMagenta
+  endif
+endfunction
+
+au InsertEnter * call InsertStatuslineColor(v:insertmode)
+au InsertLeave * call SetNormalColor()
+
+call SetNormalColor()
 
 set statusline=%f                           " file name
 set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
@@ -12,5 +32,4 @@ set statusline+=%r      "read only flag
 set statusline+=\ %=                        " align left
 set statusline+=Line:%l/%L[%p%%]            " line X of Y [percent of file]
 set statusline+=\ Col:%c                    " current column
-
 " END OF STATUS BAR SETTINGS
