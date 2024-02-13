@@ -1,15 +1,16 @@
-
+colorscheme evening
 set ignorecase
+set number
 
 "STATUS BAR SETTINGS
 " default the statusline to green when entering Vim
 function! SetNormalColor()
-  hi statusline ctermbg=yellow ctermfg=DarkMagenta
+  hi statusline ctermbg=DarkMagenta ctermfg=Yellow
 endfunction
 
 function! InsertStatuslineColor(mode)
   if a:mode == 'i'
-    hi statusline ctermbg=DarkMagenta ctermfg=Yellow
+    hi statusline ctermbg=yellow ctermfg=DarkMagenta
   elseif a:mode == 'r'
     hi statusline ctermbg=Red ctermfg=DarkMagenta
   else
