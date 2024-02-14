@@ -3,7 +3,8 @@ set ignorecase
 set number
 
 "MACROS
-let @y="\"+y" 				"save to system clipboard using @y 
+let @y="\"+y" 				"save to system clipboard using @y
+
 
 
 "STATUS BAR SETTINGS
