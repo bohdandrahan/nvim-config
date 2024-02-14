@@ -2,8 +2,11 @@ colorscheme evening
 set ignorecase
 set number
 
+"MACROS
+let @y="\"+y" 				"save to system clipboard using @y 
+
+
 "STATUS BAR SETTINGS
-" default the statusline to green when entering Vim
 function! SetNormalColor()
   hi statusline ctermbg=DarkMagenta ctermfg=Yellow
 endfunction
