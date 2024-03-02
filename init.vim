@@ -1,12 +1,16 @@
 colorscheme evening
+
 set ignorecase
 set number
 
+autocmd FileType help setlocal number 
+
 "MACROS
-let @y="\"+y" 				"save to system clipboard using @y
-
-
-
+let @y="\"+y" 	"save to system clipboard using @y
+let @p="\"+p"           "paste from system clipboard using @p (same as 
+"END OF MACROS
+ 
+  
 "STATUS BAR SETTINGS
 function! SetNormalColor()
   hi statusline ctermbg=DarkMagenta ctermfg=Yellow
